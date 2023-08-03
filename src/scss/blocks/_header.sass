@@ -1,0 +1,142 @@
+$mainColor: #f15412
+$secondaryColor: #34b3f1
+	
+/*--------------------  Шапка  --------------------*/
+.header-g
+	position: relative
+	padding-left: 20px
+	padding-right: 20px
+	z-index: 100
+
+.header
+	display: flex
+	align-items: center
+	position: relative
+	&__logo
+		width: 34px
+		img
+			width: 100%
+
+
+
+/*--------------------  Меню  --------------------*/
+
+.menu
+	&__icon
+		display: none
+		@media (max-width: 768px)
+			display: block
+			width: 30px
+			height: 18px
+			position: relative
+			z-index: 5
+			cursor: pointer
+			span
+				position: absolute
+				top: calc(50% - 1px)
+				left: 0
+				width: 100%
+				height: 2px
+				background-color: #fff
+				transition: all 0.2s
+				&:first-child
+					top: 0
+				&:last-child
+					top: auto
+					bottom: 0
+			&.active
+				span
+					transform: scale(0)
+					&:first-child
+						transform: rotate(-45deg)
+						top: calc(50% - 1px)
+					&:last-child
+						transform: rotate(45deg)
+						bottom: calc(50% - 1px)
+	// .menu__body
+	&__body
+		@media (max-width: 768px)
+			position: absolute
+			top: 0 // <-- меню бургер появляется сверху - заменяем top на bottom: 100%
+			left: -100% //left - поумолчанию <-- меню бургер появляется сверху - left: 0 | меню бургер появляется справа - left заменяем на right
+			height: 100vh
+			width: 100%
+			background-color: $mainColor //меню бургер на половину экрана, а на дургую часть экрана можно нажать и закрыть меню бургер - background-color: rgba(0, 0, 0, 0.8) | убрать display: flex overflow: auto
+			display: flex
+			overflow: auto
+			transition: all 0.2s
+		&.active 
+			left: 0 // <-- меню бургер появляется сверху - left: 0 заменяем на transform: translateY(100%)         меню бургер появляется справа - left заменяем на right
+	// .menu__list
+	&__list
+		margin-left: 69px
+		list-style-type: none
+		display: flex
+		gap: 50px
+
+		@media (max-width: 768px)
+			flex-direction: column
+			padding: 30px
+			gap: 0
+			margin: auto
+			// height: 100% меню бургер на половину экрана, а на дургую часть экрана можно нажать и закрыть меню бургер - добавить надо height: 100% width: 60% background-color: #любой цвет overflow: auto | убрать margin: auto
+			// width: 60%
+			// background-color: $mainColor
+			// overflow: auto Это для того чтобы работал скролл самого бургер меню
+	// .menu__link
+	&__link
+		color: #FFF
+		text-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25)
+		font-size: 14px
+		font-family: Oswald
+		font-weight: 400
+		letter-spacing: 0.56px
+		text-transform: uppercase
+		text-decoration: none
+		padding: 28px 0 30px 0
+		&:hover
+			color: #43FFD2
+			text-decoration: underline
+
+		@media (max-width: 768px)
+			display: block
+			font-size: 30px
+			line-height: 70px
+
+	&__item-catalog
+		position: relative
+		&:hover
+			.menu__catalog
+				opacity: 1
+				visibility: visible
+				pointer-events: all
+
+	&__catalog
+		position: absolute
+		padding: 10px 20px 10px 20px
+		margin-left: -20px
+		margin-top: 30px
+		width: 260px
+		height: 316px
+		background: rgba(0, 0, 0, 0.20)
+		backdrop-filter: blur(10px)
+		opacity: 0
+		visibility: hidden
+		pointer-events: none
+
+	&__paragraph
+		margin-top: 4px
+		&:first-child
+				margin-top: 0
+		.paragraph__link
+			color: #FFF
+			font-family: Oswald
+			font-size: 14px
+			font-style: normal
+			font-weight: 400
+			line-height: normal
+			letter-spacing: 0.56px
+			text-transform: uppercase
+			&:hover
+				color: #43FFD2
+				text-decoration: underline

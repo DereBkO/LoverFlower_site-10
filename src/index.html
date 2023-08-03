@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/head.html',{
+	"title":"Главная"
+	})
+	<body>
+		@@include('html/header.html')
+		<main>
+			<!-- Чтобы прокрутиться к определенному блоку, надо к section добавить id -->
+			<section class="promo">
+				<div class="promo__title-lover">LOVER</div>
+				<div class="promo__lvl2">
+					<div class="container">
+						<div class="promo__content">
+							<div class="promo__title-flower">FLOWER</div>
+
+							<div class="promo__subtitle">Создаём для тех, кто ценит свежесть и изящество цветка</div>
+
+							<button class="promo__btn">смотреть каталог</button>
+
+							<div class="promo__email">
+								<div class="email">zakaz@loverflower.by</div>
+								<div class="delivery">Доставка 24/7 по договоренности с оператором</div>
+							</div>
+
+							<div class="promo__address">
+								<div class="address">ул. Тимирязева 67</div>
+								<div class="time">10:00 до 21:00<br>без выходных</div>
+							</div>
+
+							<div class="promo__link">
+								<a href="#" class="instagram"><img src="@img/icons/instagram.svg" alt=""></a>
+								<a href="#" class="whatsapp"><img src="@img/icons/whatsapp.svg" alt=""></a>
+								<a href="#" class="phone"><img src="@img/icons/phone.svg" alt=""></a>
+							</div>
+
+							<div class="promo__telephone">
+								<a href="tel:+375291136969" class="number">+375 (29) 113-69-69</a>
+								<a href="tel:+375291136969" class="call__btn">
+									<img src="@img/icons/mini_phone.svg" alt="">
+									<div class="call">заказать звонок</div>
+								</a>
+							</div>
+
+							<div class="promo__basket">
+								<img src="@img/icons/basket.svg" alt="">
+								<div class="round">5</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<!-- @@include('html/footer.html') -->
+		<script src="js/script.min.js"></script>
+	</body>
+</html>
